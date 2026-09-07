@@ -22,12 +22,36 @@ def http_analysis():
         content_length = response.headers.get("Content-Length")
         print(f"Content-Length: {content_length}")
 
-        hsts = response.headers.get("Strict-Transport-Security")
+        findings = []
 
-        if hsts:
-            print(f"HSTS: Present ({hsts})")
+        security_headers = {
+            "Strict-Transport-Security": "Medium",
+            "Content-Security-Policy": "Medium",
+            "X-Frame-Options": "Low",
+            "X-Content-Type-Options": "Low"
+        }
+
+        print("\nSecurity Headers:")
+
+        for header, severity in security_headers.items():
+            value = response.headers.get(header)
+
+            if value:
+                print(f"{header}: Present")
+            else:
+                print(f"{header}: Missing")
+                findings.append({
+            "title": f"Missing {header}",
+            "severity": severity
+        })
+
+        print("\nFindings:")
+
+        if findings:
+            for finding in findings:
+                print(f"[{finding['severity']}] {finding['title']}")
         else:
-            print("HSTS: Missing")
+            print("No security header issues detected.")
 
     except requests.exceptions.RequestException:
         print("Could not connect to the website.")
