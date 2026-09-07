@@ -13,7 +13,25 @@ def http_analysis():
 
         print(f"\nStatus Code: {response.status_code}")
 
+        server = response.headers.get("Server")
+        print(f"Server: {server}")
+
+        content_type = response.headers.get("Content-Type")
+        print(f"Content-Type: {content_type}")
+
+        content_length = response.headers.get("Content-Length")
+        print(f"Content-Length: {content_length}")
+
+        hsts = response.headers.get("Strict-Transport-Security")
+
+        if hsts:
+            print(f"HSTS: Present ({hsts})")
+        else:
+            print("HSTS: Missing")
+
     except requests.exceptions.RequestException:
         print("Could not connect to the website.")
+
+
 def get_status_code(response):
     return response.status_code

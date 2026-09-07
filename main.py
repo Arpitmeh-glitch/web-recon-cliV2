@@ -22,7 +22,7 @@ def main():
         # Add DFIR functionality here
     elif choice == '3':
         print("You selected Intelligence.")
-        web_menu()
+        web_menu()  #!Call the web_menu function from web_recon.py
     elif choice == '4':
         print("You selected Reporting.")
         # Add Reporting functionality here

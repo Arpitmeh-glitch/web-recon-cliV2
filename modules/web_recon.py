@@ -1,3 +1,4 @@
+from modules.http_analysis import http_analysis
 def web_menu():
 
     while True:
@@ -15,7 +16,7 @@ def web_menu():
         choice = input("\nEnter your choice: ")
 
         if choice == "1":
-            print("HTTP Analysis")
+            http_analysis()
 
         elif choice == "2":
             print("DNS Intelligence")
