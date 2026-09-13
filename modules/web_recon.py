@@ -3,7 +3,7 @@ from modules.technology_detection import technology_detection
 from modules.dns_intelligence import dns_intelligence
 from modules.tls_analysis import tls_analysis
 from modules.subdomain_enum import subdomain_enumeration
-from modules.recon import recon_menu
+from modules.whois_intelligence import whois_intelligence
 def web_menu():
 
     while True:
@@ -34,8 +34,10 @@ def web_menu():
 
         elif choice == "5":
             subdomain_enumeration()
-
         elif choice == "6":
+            whois_intelligence()
+
+        elif choice == "7":
             break
 
         else:

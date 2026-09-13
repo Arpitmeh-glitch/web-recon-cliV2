@@ -1,6 +1,6 @@
 from modules.web_recon import web_menu
-
-
+from modules.recon import recon_menu
+from modules.reporting import reporting_menu
 def show_banner():
     print("=" * 50)
     print("Arpit-recon")
@@ -27,7 +27,7 @@ def main():
 
         if choice == '1':
             print("You selected Recon.")
-            # Recon functionality will go here
+            recon_menu()
 
         elif choice == '2':
             print("You selected DFIR.")
@@ -39,7 +39,7 @@ def main():
 
         elif choice == '4':
             print("You selected Reporting.")
-            # Reporting functionality will go here
+            reporting_menu()
 
         elif choice == '5':
             print("Exiting the program.")
