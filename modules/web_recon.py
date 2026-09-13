@@ -1,7 +1,7 @@
 from modules.http_analysis import http_analysis
 from modules.technology_detection import technology_detection
 from modules.dns_intelligence import dns_intelligence
-
+from modules.tls_analysis import tls_analysis
 
 def web_menu():
 
@@ -26,7 +26,7 @@ def web_menu():
             dns_intelligence()
 
         elif choice == "3":
-            print("TLS Analysis")
+            tls_analysis()
 
         elif choice == "4":
             technology_detection()
