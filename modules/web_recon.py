@@ -1,4 +1,7 @@
 from modules.http_analysis import http_analysis
+from modules.technology_detection import technology_detection
+
+
 def web_menu():
 
     while True:
@@ -25,7 +28,7 @@ def web_menu():
             print("TLS Analysis")
 
         elif choice == "4":
-            print("Technology Detection")
+            technology_detection()
 
         elif choice == "5":
             print("Subdomain Enumeration")
