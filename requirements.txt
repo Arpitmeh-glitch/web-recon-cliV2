@@ -1,0 +1,9 @@
+requests
+dnspython
+Pillow
+python-whois
+pypdf
+python-docx
+openpyxl
+python-pptx
+python-pptx

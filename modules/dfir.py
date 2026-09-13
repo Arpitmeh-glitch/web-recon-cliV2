@@ -5,23 +5,25 @@ from modules.string_extractor import string_extractor
 from modules.log_analyzer import log_analyzer
 from modules.integrity_checker import integrity_checker
 from modules.metadata_writer import metadata_writer
+from modules.ui import error, menu, select_prompt
+
+
 def dfir_menu():
 
     while True:
 
-        print("\n========================")
-        print("DFIR")
-        print("========================")
+        menu("DFIR", [
+            (1, "File Hash Analyzer"),
+            (2, "File Metadata Analyzer"),
+            (3, "File Signature Checker"),
+            (4, "String Extractor"),
+            (5, "Log Analyzer"),
+            (6, "Directory Integrity Checker"),
+            (7, "Metadata Writer"),
+            (8, "Back")
+        ])
 
-        print("1. File Hash Analyzer")
-        print("2. File Metadata Analyzer")
-        print("3. File Signature Checker")
-        print("4. String Extractor")
-        print("5. Log Analyzer")
-        print("6. Directory Integrity Checker")
-        print("7. Back")
-
-        choice = input("\nEnter your choice: ")
+        choice = select_prompt()
 
         if choice == "1":
             file_hash_analyzer()
@@ -42,4 +44,4 @@ def dfir_menu():
             break
 
         else:
-            print("Feature not built yet.")
+            error("Invalid choice")

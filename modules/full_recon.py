@@ -36,7 +36,7 @@ def get_service(port):
 
 def full_recon():
     print("\n==============================")
-    print("CyberReconX - Full Recon Scan")
+    print("Katergo - Full Recon Scan")
     print("==============================")
 
     target = input("Enter hostname or IP: ").strip()

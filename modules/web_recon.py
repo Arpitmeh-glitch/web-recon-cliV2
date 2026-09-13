@@ -4,21 +4,24 @@ from modules.dns_intelligence import dns_intelligence
 from modules.tls_analysis import tls_analysis
 from modules.subdomain_enum import subdomain_enumeration
 from modules.whois_intelligence import whois_intelligence
+from modules.ui import error, menu, select_prompt
+
+
 def web_menu():
 
     while True:
 
-        print("\n========================")
-        print("Web Intelligence")
-        print("========================")
-        print("1. HTTP Analysis")
-        print("2. DNS Intelligence")
-        print("3. TLS Analysis")
-        print("4. Technology Detection")
-        print("5. Subdomain Enumeration")
-        print("6. Back")
+        menu("Intelligence", [
+            (1, "HTTP Analysis"),
+            (2, "DNS Intelligence"),
+            (3, "TLS Analysis"),
+            (4, "Technology Detection"),
+            (5, "Subdomain Enumeration"),
+            (6, "WHOIS Intelligence"),
+            (7, "Back")
+        ])
 
-        choice = input("\nEnter your choice: ")
+        choice = select_prompt()
 
         if choice == "1":
             http_analysis()
@@ -41,4 +44,4 @@ def web_menu():
             break
 
         else:
-            print("Invalid choice!")
+            error("Invalid choice")

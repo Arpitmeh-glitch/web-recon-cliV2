@@ -4,24 +4,25 @@ from modules.service_detection import service_detection
 from modules.banner_grabber import banner_grabber
 from modules.os_detection import os_detection
 from modules.full_recon import full_recon
-from modules.integrity_checker import integrity_checker
 import modules.session as session
+from modules.ui import error, menu, select_prompt
+
+
 def recon_menu():
 
     while True:
 
-        print("\n========================")
-        print("Recon")
-        print("========================")
-        print("1. Host Discovery")
-        print("2. Port Scanner")
-        print("3. Service Detection")
-        print("4. Banner Grab")
-        print("5. OS Detection")
-        print("6. Full Recon")
-        print("7. Back")
+        menu("Recon", [
+            (1, "Host Discovery"),
+            (2, "Port Scanner"),
+            (3, "Service Detection"),
+            (4, "Banner Grab"),
+            (5, "OS Detection"),
+            (6, "Full Recon"),
+            (7, "Back")
+        ])
 
-        choice = input("\nEnter your choice: ")
+        choice = select_prompt()
 
         if choice == "1":
             host_discovery()
@@ -37,18 +38,14 @@ def recon_menu():
         elif choice == "5":
             os_detection()
 
-        if choice == "6":
+        elif choice == "6":
             results = full_recon()
 
             if results:
                 session.last_recon_result = results
-        
 
         elif choice == "7":
-            integrity_checker()
-
-        elif choice == "8":
             break
 
         else:
-            print("Invalid choice!")
+            error("Invalid choice")

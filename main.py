@@ -1,20 +1,22 @@
 from modules.web_recon import web_menu
 from modules.recon import recon_menu
 from modules.reporting import reporting_menu
+from modules.dfir import dfir_menu
+from modules.ui import banner, error, info, menu, select_prompt
+
+
 def show_banner():
-    print("=" * 50)
-    print("Arpit-recon")
-    print(" Recon • DFIR • Intelligence • Reporting")
-    print("=" * 50)
+    banner()
 
 
 def show_menu():
-    print("\nSelect an option:")
-    print("1. Recon")
-    print("2. DFIR")
-    print("3. Intelligence")
-    print("4. Reporting")
-    print("5. Exit")
+    menu("Main Menu", [
+        (1, "Recon"),
+        (2, "Digital Forensics & IR"),
+        (3, "Intelligence"),
+        (4, "Reporting"),
+        (5, "Exit")
+    ])
 
 
 def main():
@@ -23,30 +25,30 @@ def main():
 
         show_menu()
 
-        choice = input("Enter your choice: ")
+        choice = select_prompt()
 
         if choice == '1':
-            print("You selected Recon.")
+            info("Opening Recon")
             recon_menu()
 
         elif choice == '2':
-            print("You selected DFIR.")
-            # DFIR functionality will go here
+            info("Opening Digital Forensics & IR")
+            dfir_menu()
 
         elif choice == '3':
-            print("You selected Intelligence.")
+            info("Opening Intelligence")
             web_menu()
 
         elif choice == '4':
-            print("You selected Reporting.")
+            info("Opening Reporting")
             reporting_menu()
 
         elif choice == '5':
-            print("Exiting the program.")
+            print("\nKatergo session ended.")
             break
 
         else:
-            print("Invalid choice. Please try again.")
+            error("Invalid choice")
 
 
 if __name__ == "__main__":
