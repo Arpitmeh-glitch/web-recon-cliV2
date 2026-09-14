@@ -4,6 +4,7 @@ from modules.dns_intelligence import dns_intelligence
 from modules.tls_analysis import tls_analysis
 from modules.subdomain_enum import subdomain_enumeration
 from modules.whois_intelligence import whois_intelligence
+from modules.path_discovery import path_discovery
 from modules.ui import error, menu, select_prompt
 
 
@@ -17,8 +18,9 @@ def web_menu():
             (3, "TLS Analysis"),
             (4, "Technology Detection"),
             (5, "Subdomain Enumeration"),
-            (6, "WHOIS Intelligence"),
-            (7, "Back")
+            (6, "Web Path Discovery"),
+            (7, "WHOIS Intelligence"),
+            (8, "Back")
         ])
 
         choice = select_prompt()
@@ -37,10 +39,14 @@ def web_menu():
 
         elif choice == "5":
             subdomain_enumeration()
+
         elif choice == "6":
-            whois_intelligence()
+            path_discovery()
 
         elif choice == "7":
+            whois_intelligence()
+
+        elif choice == "8":
             break
 
         else:

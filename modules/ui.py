@@ -22,15 +22,17 @@ else:
 
 
 def banner():
-    print(f"{CYAN}{BOLD}")
-    print("  KATERGO")
-    print("  K   K  AAAAA  TTTTT  EEEEE  RRRR   GGGG   OOO")
-    print("  K  K   A   A    T    E      R   R  G      O   O")
-    print("  KKK    AAAAA    T    EEEE   RRRR   G  GG  O   O")
-    print("  K  K   A   A    T    E      R R    G   G  O   O")
-    print("  K   K  A   A    T    EEEEE  R  RR  GGGG    OOO")
-    print(f"{RESET}")
-    print(f"{CYAN}Recon | DFIR | Intelligence | Reporting{RESET}")
+    print()
+    print(f"{CYAN}{BOLD}  +----------------------------------------------------------+")
+    print("  |                                                          |")
+    print("  |  K   K  AAAAA  TTTTT  EEEEE  RRRR   GGGG   OOO          |")
+    print("  |  K  K   A   A    T    E      R   R  G      O   O         |")
+    print("  |  KKK    AAAAA    T    EEEE   RRRR   G  GG  O   O         |")
+    print("  |  K  K   A   A    T    E      R R    G   G  O   O         |")
+    print("  |  K   K  A   A    T    EEEEE  R  RR  GGGG    OOO          |")
+    print("  |                                                          |")
+    print(f"  +----------------------------------------------------------+{RESET}")
+    print(f"{CYAN}       RECON  |  DFIR  |  INTELLIGENCE  |  REPORTING{RESET}")
 
 
 def section_header(title):
